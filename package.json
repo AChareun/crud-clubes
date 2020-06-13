@@ -1,0 +1,31 @@
+{
+  "name": "crud-clubes",
+  "version": "1.0.0",
+  "description": "App para crear, consultar, actualizar y eliminar equipos en Inglaterra usando express + handlebars.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AChareun/crud-clubes.git"
+  },
+  "author": "Alonso Chareun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AChareun/crud-clubes/issues"
+  },
+  "homepage": "https://github.com/AChareun/crud-clubes#readme",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "handlebars": "^4.7.6"
+  }
+}
