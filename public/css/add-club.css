@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.view-title {
+  align-self: center;
+  padding: 10px;
+}
+
+.add-club-form {
+  width: 30vw;
+  height: auto;
+  align-self: center;
+  padding: 10px;
+}
+.add-club-form form {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr;
+}
+.add-club-form label {
+  padding: 5px;
+}
+#submit-club {
+  place-self: center stretch;
+}

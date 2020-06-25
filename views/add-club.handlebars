@@ -1,0 +1,52 @@
+<h2 class="view-title">Add a new club to England</h2>
+
+<fieldset class="add-club-form">
+  <legend>Complete with the club's info</legend>
+  <form action="/add-club" method="post">
+    <label for="crest">Crest <strong>*</strong>
+    <input type="file" id="crest" name="crestUrl">
+    </label>
+
+    <label for="name">Name <strong>*</strong>
+    <input type="text" id="name" name="name" placeholder="e.g., Arsenal FC">
+    </label>
+
+    <label for="short-name">Short Name
+    <input type="text" id="short-name" name="shortName" placeholder="e.g., Arsenal">
+    </label>
+
+    <label for="tla">TLA <strong>*</strong>
+    <input type="text" id="tla" name="tla" placeholder="e.g., ARS">
+    </label>
+
+    <label for="address">Address
+    <input type="text" id="address" name="address" placeholder="e.g., 75 Drayton Park London N5 1BU">
+    </label>
+
+    <label for="phone">Phone
+    <input type="text" id="phone" name="phone" placeholder="e.g., +44 (020) 76195003">
+    </label>
+
+    <label for="website">Website
+    <input type="text" id="website" name="website" placeholder="e.g., http://www.arsenal.com">
+    </label>
+
+    <label for="email">Email
+    <input type="text" id="email" name="email" placeholder="e.g., info@arsenal.co.uk">
+    </label>
+
+    <label for="founded">Founded <strong>*</strong>
+    <input type="text" id="founded" name="founded" placeholder="e.g., 1886">
+    </label>
+
+    <label for="club-colors">Club Colors
+    <input type="text" id="club-colors" name="clubColors" placeholder="e.g., Red / White">
+    </label>
+
+    <label for="venue">Venue
+    <input type="text" id="venue" name="venue" placeholder="e.g., Emirates Stadium">
+    </label>
+
+    <button type="submit" id="submit-club">Send</button>
+  </form>
+</fieldset>
