@@ -1,0 +1,7 @@
+<h1>England's Clubs!</h1>
+
+<ul>
+{{#each data.clubs as |club|}}
+  <li><a href="/club/{{club.tla}}">{{club.name}}</a></li>
+{{/each}}
+</ul>

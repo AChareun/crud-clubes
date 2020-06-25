@@ -1,0 +1,10 @@
+<h1>{{data.club.name}}'s page!</h1>
+
+<img src="{{data.club.crestUrl}}" alt="Club crest of {{data.club.name}}">
+
+<ul>
+  <h2>Squad</h2>
+  {{#each data.club.squad as |player|}}
+    <li><span>{{player.name}}</span> <span>{{player.position}}</span></li>
+  {{/each}}
+</ul>
