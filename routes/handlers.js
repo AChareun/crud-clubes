@@ -8,6 +8,8 @@ const clubListRoutes = require('./club-list');
 
 const clubPageRoutes = require('./club-page');
 
+const addClubRoutes = require('./add-club');
+
 router.get('/', (req, res) => {
   res.render('home', {
     style: 'main.css',
@@ -17,5 +19,7 @@ router.get('/', (req, res) => {
 clubPageRoutes(router, fs);
 
 clubListRoutes(router, fs);
+
+addClubRoutes(router, fs);
 
 module.exports = router;
