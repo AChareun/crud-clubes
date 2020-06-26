@@ -2,29 +2,23 @@ const file = require('../public/js/RW-helpers');
 
 const addClubRoutes = (app, fs) => {
   const dataPath = './public/data/equipos.json';
+  const teamPath = './public/data/equipos/';
 
   app.get('/add-club', (req, res) => {
-    fs.readFile(dataPath, 'utf8', (err, data) => {
-      if (err) {
-        throw err;
-      }
-
-      res.render('add-club', {
-        data: {
-          clubs: JSON.parse(data),
-        },
-        style: 'add-club.css',
-      });
+    res.render('add-club', {
+      style: 'add-club.css',
     });
   })
     .post('/add-club', (req, res) => {
       file.readFile(fs, dataPath, (data) => {
-        const newClubId = Object.keys(data).length + 1;
+        const newData = data;
+        const newClubId = Object.keys(newData).length + 1;
+        newData[newClubId] = req.body;
 
-        data[newClubId] = JSON.parse(req.body.data);
-
-        file.writeFile(fs, dataPath, JSON.stringify(data, null, 2), () => {
-          res.status(200).send('new club added');
+        file.writeFile(fs, dataPath, JSON.stringify(newData, null, 2), () => {
+          file.writeFile(fs, (`${teamPath + req.body.tla}.json`), JSON.stringify(req.body, null, 2), () => {
+            res.status(200).redirect(`/club/${req.body.tla}`);
+          });
         });
       }, true);
     });
