@@ -1,10 +1,22 @@
-<h1>{{data.club.name}}'s page!</h1>
-
-<img src="{{data.club.crestUrl}}" alt="Club crest of {{data.club.name}}">
-
-<ul>
-  <h2>Squad</h2>
-  {{#each data.club.squad as |player|}}
-    <li><span>{{player.name}}</span> <span>{{player.position}}</span></li>
-  {{/each}}
-</ul>
+<main>
+  <article class="club-info">
+    <h2>{{data.club.name}}</h2>
+    <img src="{{data.club.crestUrl}}" alt="Club crest of {{data.club.name}}">
+    <div>
+      <h3>Founded</h3>
+      <p>{{data.club.founded}}</p>
+    </div>
+    <div>
+      <h3>Venue</h3>
+      <p>{{data.club.venue}}</p>
+      <p>{{data.club.address}}</p>
+    </div>
+    <div>
+      <ul><h3>Contact</h3>
+        <li><strong>Phone:</strong> {{data.club.phone}}</li>
+        <li><strong>Website:</strong>{{data.club.website}}</li>
+        <li><strong>Email:</strong>{{data.club.email}}</li>
+      </ul>
+    </div>
+  </article>
+</main>
