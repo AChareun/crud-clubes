@@ -1,7 +1,20 @@
-<h1>England's Clubs!</h1>
+<main>
+  <h1>England's Clubs!</h1>
 
-<ul>
-{{#each data.clubs as |club|}}
-  <li><a href="/club/{{club.tla}}">{{club.name}}</a></li>
-{{/each}}
-</ul>
+  <table>
+    <tr>
+      <th>Crest</th>
+      <th>Club</th>
+      <th>País</th>
+      <th>Acción</th>
+    </tr>
+    {{#each data.clubs as |club|}}
+    <tr>
+      <td class="club-crests"><img src="{{club.crestUrl}}" alt="crest of {{culb.name}}"></td>
+      <td>{{club.name}}</td>
+      <td>{{club.area.name}}</td>
+      <td><a href="/club/{{club.tla}}">Ver</a> <a href="#">Editar</a> <a href="#">Eliminar</a></td>
+    </tr>
+    {{/each}}
+  </table>
+</main>
