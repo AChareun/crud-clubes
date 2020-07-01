@@ -12,8 +12,9 @@ const addClubRoutes = (app, fs) => {
     .post('/add-club', (req, res) => {
       file.readFile(fs, dataPath, (data) => {
         const newData = data;
-        const newClubId = Object.keys(newData).length + 1;
-        newData[newClubId] = req.body;
+        newData.push(req.body);
+
+        // Send extra data with the header
 
         file.writeFile(fs, dataPath, JSON.stringify(newData, null, 2), () => {
           file.writeFile(fs, (`${teamPath + req.body.tla}.json`), JSON.stringify(req.body, null, 2), () => {
