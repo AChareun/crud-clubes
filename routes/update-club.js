@@ -1,4 +1,5 @@
 const file = require('../public/js/RW-helpers');
+const updateClub = require('../public/js/update-helper');
 
 const updateClubRoutes = (app, fs) => {
   const dataPath = './public/data/equipos.json';
@@ -20,16 +21,22 @@ const updateClubRoutes = (app, fs) => {
       });
     });
   })
-    .put('/club-update/:tla', (req, res) => {
+    .put('/club-update/:tla', (req, res, next) => {
       file.readFile(fs, dataPath, (data) => {
-        const newData = data;
-        const clubToUpdate = newData.find((team) => team.tla === req.params.tla);
-        newData[newData.indexOf(clubToUpdate)] = req.body;
+        const newData = updateClub(data, req.body);
 
-        // Refactor to update only the props on the req
         // Still needs to update the standalone club file
 
         file.writeFile(fs, dataPath, JSON.stringify(newData, null, 2), () => {
+          next();
+        });
+      }, true);
+    })
+    .put('/club-update/:tla', (req, res) => {
+      file.readFile(fs, `${teamPath + req.params.tla}.json`, (data) => {
+        const newData = updateClub(data, req.body, true);
+
+        file.writeFile(fs, `${teamPath + req.params.tla}.json`, JSON.stringify(newData, null, 2), () => {
           res.status(200).redirect(`/club/${req.body.tla}`);
         });
       }, true);
