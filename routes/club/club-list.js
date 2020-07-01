@@ -1,5 +1,5 @@
 const clubListRoutes = (app, fs) => {
-  const dataPath = './public/data/equipos.json';
+  const dataPath = './data/equipos.json';
 
   app.get('/club-list', (req, res) => {
     fs.readFile(dataPath, 'utf8', (err, data) => {

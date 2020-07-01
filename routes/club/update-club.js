@@ -1,9 +1,9 @@
-const file = require('../public/js/RW-helpers');
-const updateClub = require('../public/js/update-helper');
+const file = require('../../helpers/RW-helpers');
+const updateClub = require('../../helpers/update-helper');
 
 const updateClubRoutes = (app, fs) => {
-  const dataPath = './public/data/equipos.json';
-  const teamPath = './public/data/equipos/';
+  const dataPath = './data/equipos.json';
+  const teamPath = './data/equipos/';
 
   app.get('/club-update/:tla', (req, res) => {
     fs.readFile(`${teamPath + req.params.tla}.json`, 'utf8', (err, data) => {

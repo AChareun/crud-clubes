@@ -1,8 +1,8 @@
-const file = require('../public/js/RW-helpers');
+const file = require('../../helpers/RW-helpers');
 
 const clubPageRoutes = (app, fs) => {
-  const dataPath = './public/data/equipos.json';
-  const teamPath = './public/data/equipos/';
+  const dataPath = './data/equipos.json';
+  const teamPath = './data/equipos/';
 
   // Refactor to use IDs instead of TLA
 

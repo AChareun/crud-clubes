@@ -9,7 +9,7 @@ const path = require('path');
 const PORT = 8080;
 const app = express();
 
-const router = require('./routes/handlers.js');
+const router = require('./routes/club/handlers');
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
