@@ -22,16 +22,14 @@ const clubPageRoutes = (app, fs) => {
   })
     .delete('/club/:tla/delete', (req, res) => {
       file.readFile(fs, dataPath, (data) => {
-        const newData = data;
-        const clubToDelete = newData.find((team) => team.tla === req.params.tla);
-        delete newData[newData.indexOf(clubToDelete)];
-
-        // Delete leaves a null on the JSON. Get rid of it
-
-        // Still needs to delete the standalone team file
+        const newData = data.filter((club) => club.tla !== req.params.tla);
 
         file.writeFile(fs, dataPath, JSON.stringify(newData, null, 2), () => {
-          res.status(200).redirect('/club-list');
+          fs.unlink(`${teamPath + req.params.tla}.json`, (err) => {
+            if (err) throw err;
+
+            res.status(200).redirect('/club-list');
+          });
         });
       }, true);
     });
