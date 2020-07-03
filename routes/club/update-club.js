@@ -1,5 +1,5 @@
 const file = require('../../helpers/RW-helpers');
-const updateClub = require('../../helpers/update-helper');
+const clubHelper = require('../../helpers/club-mod');
 
 const updateClubRoutes = (app, fs) => {
   const dataPath = './data/equipos.json';
@@ -23,7 +23,7 @@ const updateClubRoutes = (app, fs) => {
   })
     .put('/club-update/:tla', (req, res, next) => {
       file.readFile(fs, dataPath, (data) => {
-        const newData = updateClub(data, req.body);
+        const newData = clubHelper.updateClub(req.body, data);
 
         // Still needs to update the standalone club file
 
@@ -34,7 +34,7 @@ const updateClubRoutes = (app, fs) => {
     })
     .put('/club-update/:tla', (req, res) => {
       file.readFile(fs, `${teamPath + req.params.tla}.json`, (data) => {
-        const newData = updateClub(data, req.body, true);
+        const newData = clubHelper.updateClub(req.body, data, true);
 
         file.writeFile(fs, `${teamPath + req.params.tla}.json`, JSON.stringify(newData, null, 2), () => {
           res.status(200).redirect(`/club/${req.body.tla}`);

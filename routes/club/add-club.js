@@ -1,4 +1,5 @@
 const file = require('../../helpers/RW-helpers');
+const clubHelper = require('../../helpers/club-mod');
 
 const addClubRoutes = (app, fs) => {
   const dataPath = './data/equipos.json';
@@ -11,13 +12,12 @@ const addClubRoutes = (app, fs) => {
   })
     .post('/add-club', (req, res) => {
       file.readFile(fs, dataPath, (data) => {
-        const newData = data;
-        newData.push(req.body);
+        const [newData, newClub] = clubHelper.createClub(req.body, data);
 
         // Send extra data with the header
 
         file.writeFile(fs, dataPath, JSON.stringify(newData, null, 2), () => {
-          file.writeFile(fs, (`${teamPath + req.body.tla}.json`), JSON.stringify(req.body, null, 2), () => {
+          file.writeFile(fs, (`${teamPath + req.body.tla}.json`), JSON.stringify(newClub, null, 2), () => {
             res.status(200).redirect(`/club/${req.body.tla}`);
           });
         });
