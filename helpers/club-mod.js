@@ -1,12 +1,17 @@
 const Club = require('../entities/club');
 
-const createClub = (reqData, oldData) => {
+const createClub = (reqBody, reqFile, clubsData) => {
+  const reqData = reqBody;
+
+  reqData.crestUrl = reqFile ? `/uploads/crests/${reqFile.filename}` : 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fen.psg.fr%2Fimg%2Fplaceholders%2Fcrest-placeholder.png&f=1&nofb=1';
+  reqData.id = Number(clubsData[(clubsData.length - 1)].id + 1);
+
   const newClub = new Club({ ...reqData });
-  const newData = oldData;
+  const updatedClubsData = clubsData;
 
-  newData.push(newClub);
+  updatedClubsData.push(newClub);
 
-  return [newData, newClub];
+  return [updatedClubsData, newClub];
 };
 
 const updateClub = (reqData, oldData, standalone = false) => {
