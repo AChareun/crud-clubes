@@ -1,3 +1,16 @@
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination(req, file, cb) {
+    cb(null, 'public/uploads/crests/');
+  },
+  filename(req, file, cb) {
+    cb(null, `${file.fieldname}-${Date.now()}.${file.mimetype.split('/')[1]}`);
+  },
+});
+
+const upload = multer({ storage });
+
 const file = require('../../helpers/RW-helpers');
 const clubHelper = require('../../helpers/club-mod');
 
@@ -10,11 +23,9 @@ const addClubRoutes = (app, fs) => {
       style: 'add-club.css',
     });
   })
-    .post('/add-club', (req, res) => {
+    .post('/add-club', upload.single('crestUrl'), (req, res) => {
       file.readFile(fs, dataPath, (data) => {
-        const [newData, newClub] = clubHelper.createClub(req.body, data);
-
-        // Send extra data with the header
+        const [newData, newClub] = clubHelper.createClub(req.body, req.file, data);
 
         file.writeFile(fs, dataPath, JSON.stringify(newData, null, 2), () => {
           file.writeFile(fs, (`${teamPath + req.body.tla}.json`), JSON.stringify(newClub, null, 2), () => {

@@ -5,11 +5,8 @@ const router = express.Router();
 const fs = require('fs');
 
 const clubListRoutes = require('./club-list');
-
 const clubPageRoutes = require('./club-page');
-
 const addClubRoutes = require('./add-club');
-
 const updateClubRoutes = require('./update-club');
 
 router.get('/', (req, res) => {
