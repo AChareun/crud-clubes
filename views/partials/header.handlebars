@@ -1,39 +1,44 @@
 <style>
   header {
     width: 100%;
-    background: #FAFAFA;
+    height: 10vh;
+    position: fixed;
+    top: 0px;
+    background: linear-gradient(#012334, #021F4A);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    border-bottom: solid black 1px;
+    justify-content: space-between;
   }
   .navbar {
     list-style: none;
     display: flex;
     flex-direction: row;
-    padding: 5px 15px;
-    margin: 5px 15px;
+    margin: 0;
   }
   .nav-link {
+    font-weight: bold;
     text-decoration: none;
-    color: black;
-    padding: 10px 30px;
+    color: #F5F5F5;
+    padding: 3.5vh;
+    margin: 0;
   }
   .nav-link:hover {
-    background: #ACACAC;
-    border-bottom: solid black 1px;
+    background: #0F5A80;
+    border-bottom: solid #F5F5F5 1px;
   }
   .header-title {
-    padding: 10px;
-    margin: 10px 0px 0px 0px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #F5F5F5;
+    padding: 15px;
+    margin: 0;
   }
 </style>
 
 
 <header>
-  <h1 class="header-title">CRUD Clubes</h1>
+  <p class="header-title">CRUD CLUBS</p>
   <ul class="navbar">
-    <li><a class="nav-link" href="/">HOME</a></li>
     <li><a class="nav-link" href="/club-list">CLUBS</a></li>
     <li><a class="nav-link" href="/add-club">ADD A CLUB</a></li>
   </ul>
