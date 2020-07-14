@@ -10,10 +10,10 @@
     </tr>
     {{#each data.clubs as |club|}}
     <tr>
-      <td class="club-crests"><img src="{{club.crestUrl}}" alt="crest of {{culb.name}}"></td>
+      <td class="club-crests"><img src="{{club.crestUrl}}" alt="crest of {{club.name}}"></td>
       <td>{{club.name}}</td>
       <td>{{club.area.name}}</td>
-      <td><a href="/club/{{club.tla}}">Ver</a> <a href="#">Editar</a> <a href="#">Eliminar</a></td>
+      <td><a href="/club/{{club.id}}">Ver</a> <a href="/club-update/{{club.id}}">Editar</a> <a href="/club/{{club.id}}/delete">Eliminar</a></td>
     </tr>
     {{/each}}
   </table>
