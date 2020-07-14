@@ -7,8 +7,6 @@ const clubPageRoutes = (app, fs) => {
   const teamPath = './data/equipos/';
   const teamsBuffer = fs.readFileSync(dataPath);
 
-  // Refactor to use IDs instead of TLA
-
   app.get('/club/:id', (req, res) => {
     const clubTla = getTla(req.params.id, teamsBuffer);
 
