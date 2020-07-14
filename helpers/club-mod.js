@@ -1,9 +1,11 @@
 const Club = require('../entities/club');
 
+const placeholderCrest = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fen.psg.fr%2Fimg%2Fplaceholders%2Fcrest-placeholder.png&f=1&nofb=1';
+
 const createClub = (reqBody, reqFile, clubsData) => {
   const reqData = reqBody;
 
-  reqData.crestUrl = reqFile ? `/uploads/crests/${reqFile.filename}` : 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fen.psg.fr%2Fimg%2Fplaceholders%2Fcrest-placeholder.png&f=1&nofb=1';
+  reqData.crestUrl = reqFile ? `/uploads/crests/${reqFile.filename}` : placeholderCrest;
   reqData.id = Number(clubsData[(clubsData.length - 1)].id + 1);
 
   const newClub = new Club({ ...reqData });
