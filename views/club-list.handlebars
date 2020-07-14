@@ -1,7 +1,7 @@
 <main>
-  <h1>England's Clubs!</h1>
+  <h1 class="main-title">ENGLAND'S FOOTBALL CLUBS</h1>
 
-  <table>
+  <table id="club-list-table">
     <tr>
       <th>Crest</th>
       <th>Club</th>
@@ -13,7 +13,7 @@
       <td class="club-crests"><img src="{{club.crestUrl}}" alt="crest of {{club.name}}"></td>
       <td>{{club.name}}</td>
       <td>{{club.area.name}}</td>
-      <td><a href="/club/{{club.id}}">Ver</a> <a href="/club-update/{{club.id}}">Editar</a> <a href="/club/{{club.id}}/delete">Eliminar</a></td>
+      <td class="table-links"><a href="/club/{{club.id}}">Ver</a> <a href="/club-update/{{club.id}}">Editar</a> <a href="/club/{{club.id}}/delete">Eliminar</a></td>
     </tr>
     {{/each}}
   </table>
