@@ -21,7 +21,8 @@ main {
 #club-list-table {
   color: #F5F5F5;
   border-spacing: 0;
-  border: solid black 1px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 #club-list-table tr:nth-child(even) {
   background: #0F5A80;
@@ -39,6 +40,7 @@ table img {
   width: 25px;
   height: auto;
 }
+
 table th,
 table td {
   height: 30px;
