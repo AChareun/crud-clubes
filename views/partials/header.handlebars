@@ -26,18 +26,24 @@
     background: #0F5A80;
     border-bottom: solid #F5F5F5 1px;
   }
+
   .header-title {
+    text-decoration: none;
     font-size: 32px;
     font-weight: bold;
     color: #F5F5F5;
     padding: 15px;
     margin: 0;
   }
+  .header-title p {
+    margin: 0;
+  }
+
 </style>
 
 
 <header>
-  <p class="header-title">CRUD CLUBS</p>
+  <a class="header-title" href="/"><p>CRUD CLUBS</p></a>
   <ul class="navbar">
     <li><a class="nav-link" href="/club-list">CLUBS</a></li>
     <li><a class="nav-link" href="/add-club">ADD A CLUB</a></li>
