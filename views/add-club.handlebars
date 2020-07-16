@@ -1,54 +1,58 @@
 <main>
-  <h2 class="view-title">Add a new club to England</h2>
+  <h1 class="view-title">Add a new club to England</h1>
 
   <fieldset class="add-club-form">
-    <legend>Complete with the club's info</legend>
     <form action="/add-club" method="post" enctype="multipart/form-data">
-      <label for="crest">Crest <strong>*</strong>
-      <input type="file" id="crest" name="crestUrl">
-      </label>
+      <div id="crest-section">
+        <label for="crest">Crest
+        <input type="file" id="crest" name="crestUrl">
+        </label>
+      </div>
 
-      <label for="name">Name <strong>*</strong>
-      <input type="text" id="name" name="name" placeholder="e.g., Arsenal FC">
-      </label>
+      <div id="first-section">
+        <label for="name">Name<strong>*</strong></label>
+        <input type="text" id="name" name="name" placeholder="e.g., Arsenal FC" required>
 
-      <label for="short-name">Short Name
-      <input type="text" id="short-name" name="shortName" placeholder="e.g., Arsenal">
-      </label>
+        <label for="short-name">Short Name<strong>*</strong></label>
+        <input type="text" id="short-name" name="shortName" placeholder="e.g., Arsenal" required>
 
-      <label for="tla">TLA <strong>*</strong>
-      <input type="text" id="tla" name="tla" placeholder="e.g., ARS">
-      </label>
+        <label for="tla">TLA <strong>*</strong></label>
+        <input type="text" id="tla" name="tla" placeholder="e.g., ARS" required>
 
-      <label for="address">Address
-      <input type="text" id="address" name="address" placeholder="e.g., 75 Drayton Park London N5 1BU">
-      </label>
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="e.g., 75 Drayton Park London N5 1BU">
 
-      <label for="phone">Phone
-      <input type="text" id="phone" name="phone" placeholder="e.g., +44 (020) 76195003">
-      </label>
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="e.g., +44 (020) 76195003">
+      </div>
 
-      <label for="website">Website
-      <input type="text" id="website" name="website" placeholder="e.g., http://www.arsenal.com">
-      </label>
+      <div id="second-section">
+        <label for="website">Website</label>
+        <input type="url" id="website" name="website" placeholder="e.g., http://www.arsenal.com">
+        
 
-      <label for="email">Email
-      <input type="text" id="email" name="email" placeholder="e.g., info@arsenal.co.uk">
-      </label>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="e.g., info@arsenal.co.uk">
+        
 
-      <label for="founded">Founded <strong>*</strong>
-      <input type="text" id="founded" name="founded" placeholder="e.g., 1886">
-      </label>
+        <label for="founded">Founded <strong>*</strong></label>
+        <input type="date" id="founded" name="founded" placeholder="e.g., 1886" required>
+        
 
-      <label for="club-colors">Club Colors
-      <input type="text" id="club-colors" name="clubColors" placeholder="e.g., Red / White">
-      </label>
+        <label for="club-colors">Club Colors</label>
+        <div>
+          <input type="color" id="club-colors" name="clubColorsA">
+          <input type="color" id="club-colors" name="clubColorsB">
+        </div>
 
-      <label for="venue">Venue
-      <input type="text" id="venue" name="venue" placeholder="e.g., Emirates Stadium">
-      </label>
+        <label for="venue">Venue</label>
+        <input type="text" id="venue" name="venue" placeholder="e.g., Emirates Stadium">
+        
+      </div>
 
-      <button type="submit" id="submit-club">Send</button>
+      <div id="btn-section">
+        <button type="submit" id="submit-club">Send</button>
+      </div>
     </form>
   </fieldset>
 </main>
