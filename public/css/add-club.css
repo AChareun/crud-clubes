@@ -1,36 +1,94 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color: #F5F5F5;
   margin: 0;
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 10vh 0 5vh 0;
-  width: 100%;
-  height: 100%;
 }
 
 .view-title {
   align-self: center;
-  padding: 10px;
+  font-size: 2.7rem;
+  color: #0F5A80;
+  margin: 35px 0px;
 }
 
 .add-club-form {
-  width: 30vw;
+  width: 40vw;
   height: auto;
   align-self: center;
-  padding: 10px;
+  padding: 15px;
+  background: linear-gradient(#0F5A80, #012334);
+  color: #F5F5F5;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: black 2px 2px 5px 0px;
 }
 .add-club-form form {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 1fr;
+  grid-template:
+  [row1-start] "crest crest" 1fr [row1-end]
+  [row2-start] "area1 area2" auto [row2-end]
+  [row3-start] "button button" 1fr [row3-end]
+  / auto auto;
 }
-.add-club-form label {
-  padding: 5px;
+#crest-section {
+  display: flex;
+  justify-content: center;
+  grid-area: crest;
+  padding: 15px;
+}
+#first-section {
+  grid-area: area1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+#second-section {
+  grid-area: area2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+#btn-section {
+  display: flex;
+  grid-area: button;
+  padding: 15px;
 }
 #submit-club {
-  place-self: center stretch;
+  width: 30%;
+  margin: auto;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.add-club-form label {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+.add-club-form input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+#club-colors {
+  padding: 0;
 }

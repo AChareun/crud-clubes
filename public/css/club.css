@@ -1,44 +1,72 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color: #F5F5F5;
   margin: 0;
-  width: 100%;
-  height: 100vh;
 }
 
 main {
   margin: 10vh 0 5vh 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
 }
 
-article {
+.club-info {
+  width: 30vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #FFF;
   border: 1px solid black;
+  border-radius: 15px;
   padding: 20px;
   margin: 25px 10px;
 }
-article h2 {
+.club-name {
+  font-size: 2rem;
   text-align: center;
   margin: 5px 0px;
   padding: 10px;
 }
-article img {
+.club-crest {
   width: 150px;
   height: auto;
-  margin: 10px 10px;
+  margin: 20px 0;
 }
 
-article div {
+.info-div {
   width: 100%;
-  border-bottom: 1px solid #ACACAC;
+  border-top: 1px solid #ACACAC;
 }
-article div ul {
+#contact-info ul {
   list-style: none;
   padding: 0;
+}
+#contact-info ul li {
+  margin: 10px 0;
+}
+
+#action-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 10px;
+}
+#action-buttons button {
+  width: 30%;
+  padding: 10px;
+  margin: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background: #012334;
+  color: #F5F5F5;
+  font-weight: bold;
 }

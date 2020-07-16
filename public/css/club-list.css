@@ -1,9 +1,16 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color: #F5F5F5;
   margin: 0;
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 
 main {
@@ -32,13 +39,11 @@ main {
 }
 
 .club-crests {
+  width: 25px;
+  height: 30px;
   display: flex;
   align-content: center;
   justify-content: center;
-}
-table img {
-  width: 25px;
-  height: auto;
 }
 
 table th,
