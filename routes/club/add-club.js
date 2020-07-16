@@ -29,7 +29,7 @@ const addClubRoutes = (app, fs) => {
 
         file.writeFile(fs, dataPath, JSON.stringify(newData, null, 2), () => {
           file.writeFile(fs, (`${teamPath + req.body.tla}.json`), JSON.stringify(newClub, null, 2), () => {
-            res.status(200).redirect(`/club/${req.body.tla}`);
+            res.status(200).redirect(`/club/${newClub.id}`);
           });
         });
       }, true);
