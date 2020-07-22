@@ -45,7 +45,7 @@ main {
   grid-template:
     [row1-start] "crest crest" 1fr [row1-end]
     [row2-start] "area1 area2" auto [row2-end]
-    [row3-start] "button button" 1fr [row3-end]
+    [row3-start] "button button" 0.5fr [row3-end]
     / auto auto;
 }
 #crest-section {
@@ -54,6 +54,11 @@ main {
   grid-area: crest;
   padding: 15px;
 }
+#club-crest {
+  height: 100px;
+  width: auto;
+}
+
 #first-section {
   grid-area: area1;
   display: flex;
