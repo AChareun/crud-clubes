@@ -13,7 +13,11 @@
       <td><img class="club-crests" src="{{club.crestUrl}}" alt="crest of {{club.name}}"></td>
       <td>{{club.name}}</td>
       <td>{{club.area.name}}</td>
-      <td class="table-links"><a href="/club/{{club.id}}">Ver</a> <a href="/club-update/{{club.id}}">Editar</a> <a href="/club/{{club.id}}/delete">Eliminar</a></td>
+      <td class="table-links">
+        <a href="/club/{{club.id}}">Ver</a>
+        <a href="/club-update/{{club.id}}">Editar</a>
+        <a href="#" data-club-id="{{club.id}}" class="delete-btn">Eliminar</a>
+      </td>
     </tr>
     {{/each}}
   </table>

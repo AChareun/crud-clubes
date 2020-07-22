@@ -3,7 +3,8 @@
     <h1 class="club-name">{{data.club.name}}</h1>
     <img class="club-crest" src="{{data.club.crestUrl}}" alt="Club crest of {{data.club.name}}">
     <div id="action-buttons">
-      <button type="submit">EDIT</button><button type="submit">DELETE</button>
+      <button href="/club-update/{{data.club.id}}" class="edit-btn" type="button">EDIT</button>
+      <button data-club-id="{{data.club.id}}" class="delete-btn" type="button">DELETE</button>
     </div>
     <div id="founded-info" class="info-div">
       <h2>Founded</h2>
