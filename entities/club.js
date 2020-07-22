@@ -4,7 +4,7 @@ class Club {
       id: 2072,
       name: 'England',
     };
-    this.id = args.id;
+    this.id = parseFloat(args.id);
     this.name = args.name;
     this.shortName = args.shortName;
     this.tla = args.tla;

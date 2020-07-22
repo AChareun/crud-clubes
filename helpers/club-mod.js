@@ -20,16 +20,16 @@ const updateClub = (reqData, oldData, standalone = false) => {
   const newData = oldData;
   const newClubData = new Club(reqData);
 
-  Object.entries(newClubData).forEach(([key, value]) => {
-    if (!standalone) {
-      const clubToUpdate = newData.findIndex(
-        (club) => club.tla === newClubData.tla,
-      );
+  if (!standalone) {
+    const clubToUpdate = newData.findIndex((club) => club.id === newClubData.id);
+    Object.entries(newClubData).forEach(([key, value]) => {
       newData[clubToUpdate][key] = value === undefined ? newData[clubToUpdate][key] : value;
-    } else {
+    });
+  } else {
+    Object.entries(newClubData).forEach(([key, value]) => {
       newData[key] = value === undefined ? newData[key] : value;
-    }
-  });
+    });
+  }
 
   return newData;
 };
