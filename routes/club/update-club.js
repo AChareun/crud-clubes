@@ -9,8 +9,6 @@ const updateClubRoutes = (app, fs) => {
   const teamPath = './data/equipos/';
   const teamsBuffer = fs.readFileSync(dataPath);
 
-  // refactor so it works with club ID
-
   app.get('/club-update/:id', (req, res) => {
     const clubTla = getTla(req.params.id, teamsBuffer);
     fs.readFile(`${teamPath + clubTla}.json`, 'utf8', (err, data) => {
@@ -18,13 +16,11 @@ const updateClubRoutes = (app, fs) => {
         throw err;
       }
 
-      // View for this route is missing
-
       res.render('update-club', {
         data: {
           club: JSON.parse(data),
         },
-        style: 'update-club',
+        style: 'update-club.css',
       });
     });
   })

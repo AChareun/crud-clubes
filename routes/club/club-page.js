@@ -11,9 +11,7 @@ const clubPageRoutes = (app, fs) => {
     const clubTla = getTla(req.params.id, teamsBuffer);
 
     fs.readFile(`${teamPath + clubTla}.json`, 'utf8', (err, data) => {
-      if (err) {
-        throw err;
-      }
+      if (err) { throw err; }
 
       res.render('club', {
         data: {
@@ -30,9 +28,9 @@ const clubPageRoutes = (app, fs) => {
 
         file.writeFile(fs, dataPath, JSON.stringify(newData, null, 2), () => {
           fs.unlink(`${teamPath + clubToDelete.tla}.json`, (err) => {
-            if (err) throw err;
+            if (err) { throw err; }
 
-            res.status(200).redirect('/club-list');
+            res.status(200);
           });
         });
       }, true);
