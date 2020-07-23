@@ -16,8 +16,11 @@ const createClub = (reqBody, reqFile, clubsData) => {
   return [updatedClubsData, newClub];
 };
 
-const updateClub = (reqData, oldData, standalone = false) => {
+const updateClub = (reqBody, reqFile, oldData, standalone = false) => {
+  const reqData = reqBody;
+  reqData.crestUrl = reqFile ? `/uploads/crests/${reqFile.filename}` : placeholderCrest;
   const newData = oldData;
+
   const newClubData = new Club(reqData);
 
   if (!standalone) {

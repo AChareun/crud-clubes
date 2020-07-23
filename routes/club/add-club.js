@@ -1,20 +1,7 @@
-const multer = require('multer');
-
-const storage = multer.diskStorage({
-  destination(req, file, cb) {
-    cb(null, 'public/uploads/crests/');
-  },
-  filename(req, file, cb) {
-    cb(null, `${file.fieldname}-${Date.now()}.${file.mimetype.split('/')[1]}`);
-  },
-});
-
-const upload = multer({ storage });
-
 const file = require('../../helpers/RW-helpers');
 const clubHelper = require('../../helpers/club-mod');
 
-const addClubRoutes = (app, fs) => {
+const addClubRoutes = (app, fs, upload) => {
   const dataPath = './data/equipos.json';
   const teamPath = './data/equipos/';
 

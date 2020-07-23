@@ -4,6 +4,19 @@ const router = express.Router();
 
 const fs = require('fs');
 
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination(req, file, cb) {
+    cb(null, 'public/uploads/crests/');
+  },
+  filename(req, file, cb) {
+    cb(null, `${file.fieldname}-${Date.now()}.${file.mimetype.split('/')[1]}`);
+  },
+});
+
+const upload = multer({ storage });
+
 const clubListRoutes = require('./club-list');
 const clubPageRoutes = require('./club-page');
 const addClubRoutes = require('./add-club');
@@ -19,8 +32,8 @@ clubPageRoutes(router, fs);
 
 clubListRoutes(router, fs);
 
-addClubRoutes(router, fs);
+addClubRoutes(router, fs, upload);
 
-updateClubRoutes(router, fs);
+updateClubRoutes(router, fs, upload);
 
 module.exports = router;
