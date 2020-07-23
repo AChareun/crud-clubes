@@ -1,13 +1,15 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-color: #F5F5F5;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #f5f5f5;
   margin: 0;
 }
 
@@ -24,7 +26,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #FFF;
+  background: #fff;
   border: 1px solid black;
   border-radius: 15px;
   padding: 20px;
@@ -44,7 +46,7 @@ main {
 
 .info-div {
   width: 100%;
-  border-top: 1px solid #ACACAC;
+  border-top: 1px solid #acacac;
 }
 #contact-info ul {
   list-style: none;
@@ -67,6 +69,10 @@ main {
   border-radius: 5px;
   border: none;
   background: #012334;
-  color: #F5F5F5;
+  color: #f5f5f5;
   font-weight: bold;
+}
+.edit-btn a {
+  text-decoration: none;
+  color: #f5f5f5;
 }
