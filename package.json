@@ -20,16 +20,24 @@
   },
   "homepage": "https://github.com/AChareun/crud-clubes#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.10",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jest": "^23.20.0",
+    "jest": "^26.4.2",
+    "jsdoc": "^3.6.5",
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "better-sqlite3": "^7.1.0",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "rsdi": "^1.0.5"
   }
 }
