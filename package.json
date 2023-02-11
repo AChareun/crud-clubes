@@ -27,7 +27,7 @@
     "eslint-plugin-jest": "^23.20.0",
     "jest": "^26.4.2",
     "jsdoc": "^3.6.5",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "better-sqlite3": "^7.1.0",
